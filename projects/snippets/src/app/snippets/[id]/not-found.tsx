@@ -5,5 +5,5 @@ export default function SnippetNotFound() {
         Sorry, but we couldnt find that particular snippet!
       </h1>
     </div>
-  )
+  );
 }

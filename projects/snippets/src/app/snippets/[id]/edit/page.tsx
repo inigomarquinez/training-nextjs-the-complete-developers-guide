@@ -1,17 +1,25 @@
-import { parse } from "path";
+import { parse } from 'path';
+import { notFound } from 'next/navigation';
+import { db } from '@/db';
 
 interface SnippetEditPageProps {
   params: {
     id: string;
-  }
+  };
 }
 
-export default function SnippetEditPage(props: SnippetEditPageProps) {
+export default async function SnippetEditPage(props: SnippetEditPageProps) {
   const id = parseInt(props.params.id);
 
-  return (
-    <div>
-      Editing snippet with id {id}
-    </div>
-  )
+  const snippet = await db.snippet.findFirst({
+    where: {
+      id,
+    },
+  });
+
+  if (!snippet) {
+    return notFound();
+  }
+
+  return <div>Editing snippet with title {snippet.title}</div>;
 }

@@ -1,5 +1,3 @@
 export default function SnippetLoadingPage() {
-  return (
-    <div>Loading...</div>
-  );
+  return <div>Loading...</div>;
 }
