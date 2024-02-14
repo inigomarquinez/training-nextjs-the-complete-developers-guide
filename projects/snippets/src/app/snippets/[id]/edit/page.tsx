@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
-import { db } from '@/db';
 
+import { db } from '@/db';
 import SnippetEditForm from '@/components/snippetEditForm';
 
 interface SnippetEditPageProps {
