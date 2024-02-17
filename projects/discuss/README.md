@@ -20,17 +20,26 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Used libraries
 
-To learn more about Next.js, take a look at the following resources:
+### [NextUI](https://nextui.org/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Installation guide [here](https://nextui.org/docs/guide/installation)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### [prisma](https://www.prisma.io/)
 
-## Deploy on Vercel
+1. Configure the datasource provider
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+npx prisma init --datasource-provider SQLite
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+2. Create the schema file in `schema.prisma`.
+
+3. Generate the database assigning a name to the migration
+
+```
+npx prisma migrate dev
+```
+
+### [next-auth](https://next-auth.js.org/)
