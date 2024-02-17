@@ -43,3 +43,7 @@ npx prisma migrate dev
 ```
 
 ### [next-auth](https://next-auth.js.org/)
+
+1. First, in GitHub, we need to create a new OAuth application [here](https://github.com/settings/applications/new)
+2. We need to add `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET` and `AUTH_SECRET` to the `.env.local` file.
+3. Install `@auth/core`, `@auth/prisma-adapter` and `next-auth` libraries.
