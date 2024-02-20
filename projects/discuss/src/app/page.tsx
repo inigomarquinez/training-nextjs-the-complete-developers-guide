@@ -2,9 +2,10 @@ import { Button } from "@nextui-org/react";
 
 import { auth } from "@/auth";
 import * as actions from "@/actions";
+import Profile from "@/components/profile";
 
 export default async function Home() {
-  const session = await auth();
+  const session = await auth(); // may be null if the user is not signed in
 
   return (
     <div>
@@ -23,6 +24,8 @@ export default async function Home() {
           <div>Signed out</div>
         )
       }
+
+      <Profile />
     </div>
   );
 }
