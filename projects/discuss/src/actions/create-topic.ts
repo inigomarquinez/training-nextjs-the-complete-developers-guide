@@ -30,6 +30,9 @@ export async function createTopic(
   formState: CreateTopicFormState,
   formData: FormData
 ): Promise<CreateTopicFormState> {
+  // Simulate network latency
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+
   const result = createTopicSchema.safeParse({
     name: formData.get('name'),
     description: formData.get('description'),
