@@ -9,6 +9,9 @@ export type PostWithData = (
   }
 );
 
+// Another way to define PostWithData
+// export type PostWithData = Awaited<ReturnType<typeof fetchPostsByTopicSlug>>[number];
+
 export async function fetchPostsByTopicSlug(slug: string): Promise<PostWithData[]> {
   return db.post.findMany({
     where: { topic: { slug } },
