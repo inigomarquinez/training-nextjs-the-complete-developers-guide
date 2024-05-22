@@ -17,9 +17,12 @@ interface PostCreateFormProps {
 }
 
 export default function PostCreateForm({ slug }: PostCreateFormProps) {
-  const [formState, action] = useFormState(actions.createPost.bind(null, slug), {
-    errors: {},
-  });
+  const [formState, action] = useFormState(
+    actions.createPost.bind(null, slug),
+    {
+      errors: {},
+    }
+  );
 
   return (
     <Popover placement="left">
@@ -39,7 +42,6 @@ export default function PostCreateForm({ slug }: PostCreateFormProps) {
               labelPlacement="outside"
               placeholder="Title"
             />
-
             <Textarea
               isInvalid={!!formState.errors.content}
               errorMessage={formState.errors.content?.join(', ')}
@@ -48,7 +50,6 @@ export default function PostCreateForm({ slug }: PostCreateFormProps) {
               labelPlacement="outside"
               placeholder="Content"
             />
-
 
             {formState.errors._form ? (
               <div className="rounded p-2 bg-red-200 border border-red-400">

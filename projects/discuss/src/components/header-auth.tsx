@@ -12,7 +12,6 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
-  Skeleton,
 } from '@nextui-org/react';
 import { useSession } from 'next-auth/react';
 import * as actions from '@/actions';
@@ -22,7 +21,7 @@ export default function HeaderAuth() {
 
   let authContent: React.ReactNode;
   if (session.status === 'loading') {
-    authContent = <Skeleton className="flex rounded-full w-12 h-12" />;
+    authContent = null;
   } else if (session.data?.user) {
     authContent = (
       <Popover placement="left">

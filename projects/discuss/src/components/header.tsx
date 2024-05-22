@@ -5,22 +5,10 @@ import {
   NavbarContent,
   NavbarItem,
   Input,
-  Button,
-  Avatar,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
 } from '@nextui-org/react';
 import HeaderAuth from '@/components/header-auth';
-// import { auth } from '@/auth';
 
-export default async function Header() {
-  // This auth function makes use of cookies and the Header is used in every page,
-  // so this turns out all the pages to be dynamic at build time.
-  // TO avoid this and make it static, we'll create a header-auth client component
-  // and manage the auth there.
-  // const session = await auth();
-
+export default function Header() {
   return (
     <Navbar className="shadow mb-6">
       <NavbarBrand>

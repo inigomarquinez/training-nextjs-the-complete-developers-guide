@@ -46,11 +46,8 @@ export async function createPost(
     };
   }
 
-  // Look for the topic by slug
   const topic = await db.topic.findFirst({
-    where: {
-      slug,
-    },
+    where: { slug },
   });
 
   if (!topic) {
@@ -61,7 +58,6 @@ export async function createPost(
     };
   }
 
-  // Create the post
   let post: Post;
   try {
     post = await db.post.create({
@@ -88,7 +84,6 @@ export async function createPost(
     }
   }
 
-  // Revalidate the topic show page and redirect the user to the post show page
   revalidatePath(paths.topicShow(slug));
   redirect(paths.postShow(slug, post.id));
 }

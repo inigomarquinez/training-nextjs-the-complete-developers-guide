@@ -3,7 +3,7 @@ import Link from 'next/link';
 import paths from '@/paths';
 
 interface PostListProps {
-  fetchData: () => Promise<PostWithData[]>
+  fetchData: () => Promise<PostWithData[]>;
 }
 
 export default async function PostList({ fetchData }: PostListProps) {
